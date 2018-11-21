@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Child from './Child';
+import Lifecycle from './Lifecycle';
 
 
 class App extends Component {
@@ -27,11 +28,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.redColor}>Red</button><br/>
-        <button onClick={this.greenColor}>Green</button><br/>
-        <button onClick={this.blueColor}>Blue</button><br/>
-        <h1 style={{backgroundColor: this.state.color}}>This is my App.js</h1>
+        <button className="Change" onClick={this.redColor}>Red</button>
+        <button className="Change" onClick={this.greenColor}>Green</button>
+        <button className="Change" onClick={this.blueColor}>Blue</button><br/>
+        <h1 className="Heading" style={{backgroundColor: this.state.color}}>This is my App.js</h1>
         <Child  changeColor={this.state.color} />
+        <hr/>
+        <Lifecycle />
       </div>
     );
   }
